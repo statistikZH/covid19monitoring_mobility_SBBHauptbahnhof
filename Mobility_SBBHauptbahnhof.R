@@ -18,9 +18,9 @@ getData <- function(url_dat)
         transmute(
             'date' := as.POSIXct(paste(.data$Betriebstag, "00:00:00", sep=" "), format="%Y-%m-%d"),
             'value' := .data$Anzahl,
-            'topic' := "Mobilität",
+            'topic' := "Mobilit\u00e4t",
             'variable_short' := "oev_freq_hb",
-            'variable_long' := "Anzahl Züge pro Haltestelle, Zählstelle Zürich Hauptbahnhof",
+            'variable_long' := "Ein-& Ausfahrten am Zürich HB",
             'location' := "Zürich Hauptbahnhof",
             'unit' := "Anzahl",
             'source' := "SBB",
