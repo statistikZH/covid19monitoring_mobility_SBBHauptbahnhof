@@ -2,13 +2,13 @@
 
 name: Update data
 
-#on:
-#  schedule:
-#    - cron:  '25 9 * * *' # everyday at 06:05 UTC
+on:
+  schedule:
+    - cron:  '30 9 * * *' # everyday at 06:05 UTC
 
-push:
-    paths:
-    - 'Readme.md'
+#push:
+#    paths:
+#    - 'Readme.md'
       
 jobs:
   update_data:
