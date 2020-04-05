@@ -5,7 +5,7 @@ name: Update data
 
 on:
   schedule:
-    - cron:  '18 9 * * *' # everyday at 06:05 UTC
+    - cron:  '25 9 * * *' # everyday at 06:05 UTC
 
   #push:
     #paths:
@@ -29,7 +29,7 @@ jobs:
       
     # Prepare data
     - name: Prepare data with R
-      run: Rscript Other_Weather.R
+      run: Rscript Mobility_SBBHauptbahnhof.R
 
     # Commit to repo with updated file
     - uses: stefanzweifel/git-auto-commit-action@v4.1.1
