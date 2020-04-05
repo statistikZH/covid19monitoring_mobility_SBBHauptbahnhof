@@ -27,7 +27,8 @@ getData <- function(url_dat)
             'update' := "t\u00e4glich",
             'public' := "ja",
             'description' := "https://github.com/statistikZH/covid19monitoring_mobility_SBBHauptbahnhof"
-        )
+        ) %>%
+      arrange(date)
     
     # return
     return(dat_prep)
