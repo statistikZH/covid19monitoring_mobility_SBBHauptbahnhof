@@ -16,7 +16,7 @@ getData <- function(url_dat)
     #prepare dat
     dat_prep <- dat %>%
         transmute(
-            'date' := as.POSIXct(paste(.data$Betriebstag, "00:00:00", sep=" "), format="%Y-%m-%d"),
+            'date' := as.POSIXct(paste(.data$betriebstag, "00:00:00", sep=" "), format="%Y-%m-%d"),
             'value' := .data$Anzahl,
             'topic' := "Mobilit\u00e4t",
             'variable_short' := "oev_freq_hb",
@@ -35,6 +35,6 @@ getData <- function(url_dat)
 }
 
 # main
-url_dat <- "https://data.sbb.ch/explore/dataset/anzahl-zuge-pro-haltestelle/download/?format=csv&refine.bpuic=8503000&timezone=Europe/Berlin&lang=en&use_labels_for_header=true "
+url_dat <- "https://data.sbb.ch/explore/dataset/anzahl-zuge-pro-haltestelle/download/?format=csv&refine.bpuic=8503000&timezone=Europe/Berlin&lang=en&use_labels_for_header=true"
 dat_prep <- getData(url_dat)
 write.table(dat_prep, "./Mobility_SBBHauptbahnhof.csv", sep=",", fileEncoding="UTF-8", row.names = F)
