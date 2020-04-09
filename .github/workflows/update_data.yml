@@ -4,7 +4,7 @@ name: Update data
 
 on:
   schedule:
-    - cron:  '30 6 * * *' # everyday at 04:05 UTC # '10 7 * * *' # everyday at 04:05 UTC
+    - cron:  '5 6 * * *' # everyday at 06:05 UTC # 
 
 #push:
 #    paths:
