@@ -17,7 +17,7 @@ getData <- function(url_dat)
     dat_prep <- dat %>%
         transmute(
             'date' := as.POSIXct(paste(.data$betriebstag, "00:00:00", sep=" "), format="%Y-%m-%d"),
-            'value' := .data$Anzahl,
+            'value' := .data$"Anzahl.Züge",
             'topic' := "Mobilit\u00e4t",
             'variable_short' := "oev_freq_hb",
             'variable_long' := "Ein-& Ausfahrten am Zürich HB",
