@@ -12,11 +12,11 @@ getData <- function(url_dat)
 {
       # import dat
     dat <- read.csv(url(url_dat), header=T, sep=";", stringsAsFactors=FALSE, encoding="UTF-8")
-    
+
     #prepare dat
     dat_prep <- dat %>%
         transmute(
-            'date' := as.POSIXct(paste(.data$betriebstag, "00:00:00", sep=" "), format="%Y-%m-%d"),
+            'date' := as.POSIXct(paste(.data$Betriebstag, "00:00:00", sep=" "), format="%Y-%m-%d"),
             'value' := .data$"Anzahl.Züge",
             'topic' := "Mobilit\u00e4t",
             'variable_short' := "oev_freq_hb",
@@ -29,7 +29,7 @@ getData <- function(url_dat)
             'description' := "https://github.com/statistikZH/covid19monitoring_mobility_SBBHauptbahnhof"
         ) %>%
       arrange(date)
-    
+
     # return
     return(dat_prep)
 }
